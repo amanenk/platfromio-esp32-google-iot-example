@@ -1,0 +1,3 @@
+[submodule "lib/esp-google-iot"]
+	path = lib/esp-google-iot
+	url = https://github.com/espressif/esp-google-iot
