@@ -923,6 +923,16 @@ CONFIG_WIFI_PROV_AUTOSTOP_TIMEOUT=30
 CONFIG_WPA_MBEDTLS_CRYPTO=y
 # CONFIG_WPA_TLS_V12 is not set
 # end of Supplicant
+
+#
+# Google IoT Core Configuration
+#
+CONFIG_GIOT_PROJECT_ID="project_id"
+CONFIG_GIOT_LOCATION="us-central1-a"
+CONFIG_GIOT_REGISTRY_ID="registry_id"
+CONFIG_GIOT_DEVICE_ID="device_id"
+# CONFIG_GIOT_DEBUG_OUTPUT is not set
+# end of Google IoT Core Configuration
 # end of Component config
 
 #

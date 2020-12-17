@@ -11,7 +11,7 @@
 #include "freertos/event_groups.h"
 #include "esp_system.h"
 #include "esp_wifi.h"
-#include "esp_event_loop.h"
+#include "esp_event.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
 #include "jsmn.h"
@@ -248,9 +248,10 @@ static esp_err_t wifi_event_handler(void *ctx, system_event_t *event)
 
 static void wifi_init(void)
 {
-    tcpip_adapter_init();
+    // TODO use esp_netif_deinit() somewhere
+    esp_netif_init();
     wifi_event_group = xEventGroupCreate();
-    ESP_ERROR_CHECK(esp_event_loop_init(wifi_event_handler, NULL));
+    ESP_ERROR_CHECK( esp_event_loop_init(wifi_event_handler, NULL));
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
     ESP_ERROR_CHECK(esp_wifi_set_storage(WIFI_STORAGE_RAM));
@@ -355,3 +356,8 @@ void app_main()
     driver_init();
     xTaskCreate(&mqtt_task, "mqtt_task", 8192, NULL, 5, NULL);
 }
+
+// void app_main()
+// {
+   
+// }
