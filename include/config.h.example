@@ -1,5 +1,5 @@
-#define CONFIG_ESP_WIFI_SSID "Home"
-#define CONFIG_ESP_WIFI_PASSWORD "senyasonyakev"
+#define CONFIG_ESP_WIFI_SSID "your wifi"
+#define CONFIG_ESP_WIFI_PASSWORD "your pass"
 
 #define CONFIG_OUTPUT_GPIO 27
 #define CONFIG_GIOT_DEVICE_ID "test123"
