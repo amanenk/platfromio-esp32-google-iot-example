@@ -7,7 +7,7 @@
 ```
 mkdir -p certs
 openssl ecparam -genkey -name prime256v1 -noout -out certs/ec_private.pem
-openssl ec -in ec_private.pem -pubout -out certs/ec_public.pem 
+openssl ec -in certs/ec_private.pem -pubout -out certs/ec_public.pem 
 ```
 
 ## Additional info
